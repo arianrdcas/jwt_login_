@@ -15,35 +15,7 @@ export const Login = (props) => {
       error
   } = store;
 
-  /*const { 
-        handleChange, 
-        handleSubmit, 
-        } = actions; */
-
-
-  /* const [data, setData] = useState({
-    username: "",
-    password:""
-  })     
-
-  const dataInput = (e) => {
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const sendData = (e) => {
-    e.preventDefault();
-    actions.login(data,history)
-    setData({
-      email: "",
-      password: "",
-    });
-  };
- */
-
-
+  
   useEffect(() => {
     if (store.isAuth) history.push("/login");
   }, []);
@@ -81,9 +53,6 @@ export const Login = (props) => {
           <button className="btn btn-info btn-block btn-sm">
             Login
           </button>
-          {/* <button className="btn btn-info btn-danger btn-block btn-sm">
-            Logout
-          </button> */}
         </div>
       </form>
     </>

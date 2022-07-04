@@ -62,10 +62,6 @@ export const Registro = props => {
                     </button>
                 </div>
             </form>
-             {/* <ul>
-                <li>{datos.email}</li>
-                <li>{datos.password}</li>
-            </ul> */}
         </>    
     )
 }

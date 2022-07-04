@@ -99,7 +99,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       logout:(history)=>{
         sessionStorage.clear()
-        setStore({authorized:false, currentUser:[]})
+        setStore({isAuth:false, currentUser:[]})
   
         history.push("/")
   

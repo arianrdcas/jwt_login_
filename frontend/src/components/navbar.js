@@ -1,6 +1,8 @@
 import React, { useContext }  from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { Login } from "../views/login";
+import { Logout } from "../views/logout";
 
 const Navbar = (props) => {
   const {store, actions}=useContext(Context)
@@ -11,12 +13,15 @@ const Navbar = (props) => {
     actions.logout(history)
   };
 
+   
+
+
   return (
     <div>
       <ul className="nav nav-tabs">
         <li className="nav-item">
           <Link className={"nav-link " + (location.pathname === '/' ? "active" : "")} to="/">
-            Homes
+            Home
           </Link>
         </li>
         <li className="nav-item">
@@ -29,16 +34,22 @@ const Navbar = (props) => {
             Registro
           </Link>
         </li>
-        <li className="nav-item">
-          <Link className={"nav-link " + (location.pathname === '/login' ? "active" : "")} to="/login">
-            Login
-          </Link>
-        </li>
-        <li className="nav-item">
-            <Link className="nav-link" onClick={logout} to="/login">
-                Logout
+        {
+          !store.isAuth ? (
+          <li className="nav-item">
+            <Link className={"nav-link " + (location.pathname === '/login' ? "active" : "")} to="/login">
+                Login
             </Link>
-        </li>
+          </li>
+          ) :
+          (
+            <li className="nav-item">
+              <Link className="nav-link" onClick={logout} to="/login">
+                Logout
+              </Link>
+            </li>
+          )
+        } 
       </ul>
     </div>
   );
