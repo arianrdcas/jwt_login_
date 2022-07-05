@@ -19,7 +19,7 @@ export const Profile = props => {
         <>
             {
                 !!store.profile && (
-                    <h1 className="m-3">Perfil de {store.currentUser.user.username}</h1>
+                    <h1 className="m-3">Perfil de {store?.currentUser?.user?.username}</h1>
                 )
                 
             } 
